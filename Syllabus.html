@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Academic Research - Syllabus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #AB0520;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #AB0520;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .course-info {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #AB0520;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            border-left: 4px solid #AB0520;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #003366;
+            font-size: 1.4em;
+            margin: 25px 0 10px 0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 2px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        .section:hover {
+            border-left-color: #AB0520;
+        }
+
+        .week-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #003366;
+        }
+
+        .assignment-box {
+            background: linear-gradient(135deg, #AB0520, #cc1733);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .assignment-box h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #AB0520;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn {
+            background-color: #AB0520;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #8B0000;
+        }
+
+        .collapsible {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1em;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+
+        .collapsible.active {
+            background-color: #AB0520;
+            color: white;
+        }
+
+        .content {
+            padding: 0;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .content.show {
+            display: block;
+            padding: 15px;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #AB0520;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+        }
+
+        .back-to-top:hover {
+            background-color: #8B0000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        .print-friendly {
+            display: none;
+        }
+
+        @media print {
+            .btn, .nav-buttons, .back-to-top {
+                display: none;
+            }
+            
+            .print-friendly {
+                display: block;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons">
+        <button class="btn" onclick="window.print()">Print Syllabus</button>
+        <button class="btn" onclick="toggleAllSections()">Expand/Collapse All</button>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()" id="backToTop">↑</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>Introduction to Academic Research</h1>
+            <div class="course-info">
+                <strong>University of Arizona</strong><br>
+                Course Number: [Course #] | Credits: 3<br>
+                Semester: [Term Year] | Meeting Time: [Days/Times]<br>
+                Location: [Building Room] | Instructor: [Your Name]
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Course Description</h2>
+            <p>This course introduces undergraduate students to the fundamental principles and practices of academic research. Students will learn to navigate scholarly databases, critically evaluate sources, conduct systematic literature reviews, and produce well-structured research papers. Emphasis is placed on developing information literacy, critical thinking skills, and academic writing proficiency essential for success in upper-division coursework and beyond.</p>
+        </div>
+
+        <div class="section">
+            <h2>Learning Outcomes</h2>
+            <p>By the end of this course, students will be able to:</p>
+            <ol>
+                <li><strong>Information Literacy</strong>: Navigate academic databases and locate appropriate scholarly sources</li>
+                <li><strong>Critical Analysis</strong>: Evaluate the credibility, relevance, and quality of academic sources</li>
+                <li><strong>Literature Review Skills</strong>: Synthesize existing research to identify gaps and patterns in scholarship</li>
+                <li><strong>Research Design</strong>: Formulate focused research questions and develop appropriate methodologies</li>
+                <li><strong>Academic Writing</strong>: Compose clear, well-organized research papers following disciplinary conventions</li>
+                <li><strong>Citation Practices</strong>: Apply proper citation formats (APA, MLA, Chicago) and understand academic integrity principles</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <button class="collapsible">Required Materials</button>
+            <div class="content">
+                <ul>
+                    <li><strong>Textbook</strong>: Booth, Wayne C., Gregory G. Colomb, and Joseph M. Williams. <em>The Craft of Research</em>, 4th ed. University of Chicago Press, 2016.</li>
+                    <li><strong>Supplemental Readings</strong>: Available through D2L course site</li>
+                    <li><strong>University of Arizona Library Access</strong>: Required for database searches and resource access</li>
+                    <li><strong>Citation Management Software</strong>: Zotero (free download)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Course Structure</h2>
+            
+            <button class="collapsible">Unit 1: Foundations of Academic Research (Weeks 1-3)</button>
+            <div class="content">
+                <div class="week-item">
+                    <strong>Week 1: Introduction to Academic Research</strong>
+                    <ul>
+                        <li>What distinguishes academic research from other forms of inquiry?</li>
+                        <li>Overview of the research process</li>
+                        <li>Introduction to disciplinary conventions</li>
+                        <li><em>Assignment</em>: Research interest reflection paper (1-2 pages)</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 2: Information Literacy Fundamentals</strong>
+                    <ul>
+                        <li>Evaluating source types: primary vs. secondary sources</li>
+                        <li>Understanding peer review process</li>
+                        <li>Introduction to UA Library resources</li>
+                        <li><em>Lab</em>: Database navigation workshop</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 3: Developing Research Questions</strong>
+                    <ul>
+                        <li>Moving from topics to focused questions</li>
+                        <li>Characteristics of effective research questions</li>
+                        <li>Scope and feasibility considerations</li>
+                        <li><em>Assignment</em>: Research question proposal (500 words)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Unit 2: Source Discovery and Evaluation (Weeks 4-6)</button>
+            <div class="content">
+                <div class="week-item">
+                    <strong>Week 4: Search Strategies</strong>
+                    <ul>
+                        <li>Boolean operators and advanced search techniques</li>
+                        <li>Subject-specific databases vs. general databases</li>
+                        <li>Government documents and grey literature</li>
+                        <li><em>Lab</em>: Advanced database searching</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 5: Source Evaluation</strong>
+                    <ul>
+                        <li>CRAAP test and other evaluation frameworks</li>
+                        <li>Recognizing bias and evaluating methodology</li>
+                        <li>Currency and relevance in different disciplines</li>
+                        <li><em>Assignment</em>: Source evaluation exercise (5 sources analyzed)</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 6: Managing Sources</strong>
+                    <ul>
+                        <li>Introduction to Zotero citation management</li>
+                        <li>Organizing research materials</li>
+                        <li>Note-taking strategies for research</li>
+                        <li><em>Lab</em>: Zotero setup and practice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Unit 3: Literature Review Process (Weeks 7-10)</button>
+            <div class="content">
+                <div class="week-item">
+                    <strong>Week 7: Understanding Literature Reviews</strong>
+                    <ul>
+                        <li>Purpose and types of literature reviews</li>
+                        <li>Literature review vs. annotated bibliography</li>
+                        <li>Identifying themes and patterns in scholarship</li>
+                        <li><em>Reading</em>: Sample literature reviews from various disciplines</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 8: Systematic Review Process</strong>
+                    <ul>
+                        <li>Developing search protocols</li>
+                        <li>Inclusion and exclusion criteria</li>
+                        <li>Creating search logs and documentation</li>
+                        <li><em>Assignment</em>: Literature search plan and initial bibliography (15-20 sources)</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 9: Synthesizing Sources</strong>
+                    <ul>
+                        <li>Moving beyond summary to synthesis</li>
+                        <li>Identifying gaps, contradictions, and trends</li>
+                        <li>Creating conceptual frameworks</li>
+                        <li><em>Workshop</em>: Synthesis practice with sample sources</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 10: Writing Literature Reviews</strong>
+                    <ul>
+                        <li>Organizational strategies for literature reviews</li>
+                        <li>Transitional phrases and coherent flow</li>
+                        <li>Balancing breadth and depth</li>
+                        <li><em>Assignment</em>: Literature review draft (1,500-2,000 words)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Unit 4: Research Paper Development (Weeks 11-14)</button>
+            <div class="content">
+                <div class="week-item">
+                    <strong>Week 11: Research Paper Structure</strong>
+                    <ul>
+                        <li>Components of academic papers across disciplines</li>
+                        <li>Introduction strategies and thesis development</li>
+                        <li>Methods sections and research design</li>
+                        <li><em>Peer Review</em>: Literature review drafts</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 12: Argumentation and Evidence</strong>
+                    <ul>
+                        <li>Building persuasive academic arguments</li>
+                        <li>Integrating sources effectively</li>
+                        <li>Addressing counterarguments and limitations</li>
+                        <li><em>Assignment</em>: Research paper outline and methods section</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 13: Academic Writing Style</strong>
+                    <ul>
+                        <li>Clarity, concision, and precision in academic prose</li>
+                        <li>Avoiding plagiarism and maintaining academic integrity</li>
+                        <li>Revision strategies for academic writing</li>
+                        <li><em>Workshop</em>: Writing clinic and individual conferences</li>
+                    </ul>
+                </div>
+                
+                <div class="week-item">
+                    <strong>Week 14: Citation and Documentation</strong>
+                    <ul>
+                        <li>In-depth coverage of citation styles (APA focus)</li>
+                        <li>Reference list formatting</li>
+                        <li>Ethical use of sources</li>
+                        <li><em>Assignment</em>: Complete research paper draft (3,000-4,000 words)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Unit 5: Presentation and Dissemination (Week 15)</button>
+            <div class="content">
+                <div class="week-item">
+                    <strong>Week 15: Research Presentation</strong>
+                    <ul>
+                        <li>Presenting research findings effectively</li>
+                        <li>Creating visual aids and handouts</li>
+                        <li>Handling questions and feedback</li>
+                        <li><em>Final Presentations</em>: 10-minute research presentations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Major Assignments</h2>
+            
+            <div class="assignment-box">
+                <h3>Assignment 1: Literature Review (30% of grade)</h3>
+                <p><strong>Due:</strong> Week 11</p>
+                <p><strong>Length:</strong> 1,500-2,000 words</p>
+                <p><strong>Requirements:</strong> Systematic review of 15-20 scholarly sources on chosen topic, demonstrating synthesis and critical analysis skills. Must identify research gaps and provide clear organizational framework.</p>
+            </div>
+
+            <div class="assignment-box">
+                <h3>Assignment 2: Research Paper (40% of grade)</h3>
+                <p><strong>Due:</strong> Finals Week</p>
+                <p><strong>Length:</strong> 3,000-4,000 words</p>
+                <p><strong>Requirements:</strong> Original research paper incorporating literature review as foundation. Must include proper methodology section, analysis of findings, and discussion of implications. Minimum 20 scholarly sources required.</p>
+            </div>
+
+            <div class="assignment-box">
+                <h3>Assignment 3: Research Presentation (15% of grade)</h3>
+                <p><strong>Due:</strong> Week 15</p>
+                <p><strong>Length:</strong> 10 minutes + Q&A</p>
+                <p><strong>Requirements:</strong> Professional presentation of research findings with visual aids. Must demonstrate mastery of subject matter and ability to communicate complex ideas clearly.</p>
+            </div>
+
+            <div class="assignment-box">
+                <h3>Assignment 4: Research Portfolio (15% of grade)</h3>
+                <p><strong>Due:</strong> Ongoing throughout semester</p>
+                <p><strong>Components:</strong> Research question proposal, source evaluations, search logs, annotated bibliography, peer review activities, and reflection essays. Portfolio demonstrates research process development.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <button class="collapsible">Grading Scale</button>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th>Grade</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>90-100%</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>80-89%</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>70-79%</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>60-69%</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>Below 60%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <button class="collapsible">Weekly Schedule Overview</button>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th>Week</th>
+                        <th>Topic</th>
+                        <th>Major Activities</th>
+                    </tr>
+                    <tr><td>1</td><td>Introduction to Research</td><td>Reflection paper assigned</td></tr>
+                    <tr><td>2</td><td>Information Literacy</td><td>Library workshop</td></tr>
+                    <tr><td>3</td><td>Research Questions</td><td>Question proposal due</td></tr>
+                    <tr><td>4</td><td>Search Strategies</td><td>Database lab</td></tr>
+                    <tr><td>5</td><td>Source Evaluation</td><td>Evaluation exercise due</td></tr>
+                    <tr><td>6</td><td>Managing Sources</td><td>Zotero workshop</td></tr>
+                    <tr><td>7</td><td>Literature Reviews</td><td>Sample review analysis</td></tr>
+                    <tr><td>8</td><td>Systematic Review</td><td>Search plan due</td></tr>
+                    <tr><td>9</td><td>Synthesizing Sources</td><td>Synthesis workshop</td></tr>
+                    <tr><td>10</td><td>Writing Reviews</td><td>Literature review draft due</td></tr>
+                    <tr><td>11</td><td>Paper Structure</td><td>Peer review activity</td></tr>
+                    <tr><td>12</td><td>Argumentation</td><td>Outline and methods due</td></tr>
+                    <tr><td>13</td><td>Academic Writing</td><td>Writing clinic</td></tr>
+                    <tr><td>14</td><td>Citation Practices</td><td>Paper draft due</td></tr>
+                    <tr><td>15</td><td>Presentations</td><td>Final presentations</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <button class="collapsible">University Policies & Resources</button>
+            <div class="content">
+                <h3>Academic Integrity</h3>
+                <p>The University of Arizona's Code of Academic Integrity applies to all work in this course. Plagiarism, cheating, and other forms of academic dishonesty will result in failure of the assignment and potentially the course. When in doubt about citation practices, ask for clarification.</p>
+                
+                <h3>Accommodations</h3>
+                <p>Students with documented disabilities who may need accommodations should make an appointment with me as soon as possible. A current Accommodation Letter from the Disability Resource Center is required before any accommodations can be provided.</p>
+                
+                <h3>Resources for Success</h3>
+                <ul>
+                    <li><strong>UA Library Research Help</strong>: lib.arizona.edu/research-help</li>
+                    <li><strong>Writing Center</strong>: writingcenter.arizona.edu</li>
+                    <li><strong>Disability Resource Center</strong>: drc.arizona.edu</li>
+                    <li><strong>Dean of Students Office</strong>: deanofstudents.arizona.edu</li>
+                    <li><strong>Office Hours</strong>: [Your office hours and location]</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Note:</strong> This syllabus is subject to change at the instructor's discretion. Students will be notified of any modifications in advance.</p>
+            <p><strong>Contact Information:</strong><br>
+            Email: [your email] | Office: [your office] | Phone: [your phone] | Office Hours: [your hours]</p>
+        </div>
+    </div>
+
+    <script>
+        // Collapsible sections functionality
+        const collapsibles = document.getElementsByClassName("collapsible");
+        
+        for (let i = 0; i < collapsibles.length; i++) {
+            collapsibles[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                content.classList.toggle("show");
+            });
+        }
+
+        // Back to top button
+        window.onscroll = function() {
+            const backToTopBtn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Expand/collapse all sections
+        function toggleAllSections() {
+            const collapsibles = document.getElementsByClassName("collapsible");
+            const contents = document.getElementsByClassName("content");
+            
+            // Check if all are expanded
+            let allExpanded = true;
+            for (let content of contents) {
+                if (!content.classList.contains("show")) {
+                    allExpanded = false;
+                    break;
+                }
+            }
+            
+            // Toggle all sections
+            for (let i = 0; i < collapsibles.length; i++) {
+                if (allExpanded) {
+                    collapsibles[i].classList.remove("active");
+                    contents[i].classList.remove("show");
+                } else {
+                    collapsibles[i].classList.add("active");
+                    contents[i].classList.add("show");
+                }
+            }
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive feedback
+        document.querySelectorAll('.week-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
